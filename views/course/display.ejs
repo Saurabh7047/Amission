@@ -10,9 +10,10 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Action</th>
+            <th>status</th>
             <th>comment</th>
-
+            <th>Action</th>
+            
         </tr>
         <% i=1 %>
         <% data.forEach(data =>{ %>
@@ -22,9 +23,8 @@
                 <td><%= data.name %></td>
                 <td><%= data.email %></td>
                 <td><%= data.phone %></td>
-                
-
-                
+                <td><%= data.status %></td>
+                <td><%= data.comment %></td>
                 <td>
                     <a href="/view/<%= data._id %>" class="btn btn-info">view</a>
                     <a href="/edit/<%= data._id %>" class="btn btn-success">edit</a>
