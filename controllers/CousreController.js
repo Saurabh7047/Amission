@@ -26,7 +26,8 @@ class CourseController {
         try {
             const{name,image,_id}=req.user
 
-            const data = await courseModel.find()
+            const data = await courseModel.find({ userid: _id });
+            
             res.render('course/display',{data:data,n:name,i:image})
 
         } catch (error) {
