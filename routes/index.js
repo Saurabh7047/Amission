@@ -5,6 +5,8 @@ const { countDocuments } = require('../models/course')
 const router = express.Router()
 const ChechUserAuth = require('../middleware/auth')
 const AdminController = require('../controllers/Admin/AdminController')
+const adminauth = require('../middleware/adminauth')
+
 
 //routes
 //FrontController
@@ -32,10 +34,10 @@ router.get('/delete/:id',ChechUserAuth,CourseController.delete)
 
 
 //admincontrollerii9
-router.get('/admin/display',ChechUserAuth,AdminController.display)
-router.get('/admin/course/view/:id',ChechUserAuth,AdminController.courseview)
+router.get('/admin/display',ChechUserAuth,adminauth,AdminController.display)
+router.get('/admin/course/view/:id',ChechUserAuth,adminauth,AdminController.courseview)
 // route.get('/admin/course/delete',ChechUserAuth,AdminController.coursedelete)
-router.post('/updatestatus/:id',ChechUserAuth,AdminController.updatestatus)
+router.post('/updatestatus/:id',ChechUserAuth,adminauth,AdminController.updatestatus)
 
 
 
